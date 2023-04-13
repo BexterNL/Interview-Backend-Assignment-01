@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
 
 namespace Bexter.Interview.Assignment01
 {
-    class Program
+    internal class Program
     {
-
         private static int input;
         private static bool mustAskForInput = true;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             if (args.Length > 0)
             {
                 mustAskForInput = !int.TryParse(args[0], out input);
             }
+
             if (mustAskForInput)
             {
                 input = AskForInput();
@@ -43,10 +41,9 @@ namespace Bexter.Interview.Assignment01
             // Print roman notation here
 
             Console.ReadKey();
-
         }
 
-        static int AskForInput(bool showError = false)
+        private static int AskForInput(bool showError = false)
         {
             Console.Clear();
             if (showError)
@@ -66,6 +63,5 @@ namespace Bexter.Interview.Assignment01
 
             return AskForInput(true);
         }
-
     }
 }
